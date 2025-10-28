@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', sans-serif;
+    /* background-color: #41066a; */
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    background-color: #4c0a7e;
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a855f7;
+    border-radius: 20px; 
+    padding: 40px;
+    width: 70%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.login-illustration img {
+    width: 450px;
+}
+
+.login-form {
+    width: 40%;
+    color: aliceblue;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+.login-label {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: aliceblue;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
+
+.remember-row {
+    display: flex;
+    margin-top: 10px;
+}
+
+.remember-row label {
+    margin-left: 5px;
+    color: aliceblue;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #581c87;
+    color: aliceblue;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #4c0a7e;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 10px;
+    color: #d1c4e9;
+}
+
+.signup-text a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+    display: block;
+}
