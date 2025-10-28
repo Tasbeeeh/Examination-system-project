@@ -14,23 +14,29 @@
             </div>
             <div class="login-form">
                 <h2 class="title">Login</h2>
-                <label class="login-label">Email</label>
-                <input type="email" class="login-input" placeholder="Enter your email">
-                
-                <label class="login-label">Password</label>
-                <input type="password" class="login-input" placeholder="Enter your password">
-                
-                <div class="remember-row">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember Me</label>
-                </div>
-                
-                <button class="submit-btn">Login</button>
-                <!-- refere to sign up page -->
-                <p class="signup-text">Don’t have an account? <a href="#">Sign Up</a></p>
+                <form onsubmit="return handleLogin(event)">
+                    <label class="login-label">Email</label>
+                    <input type="text" id="inputEmail" class="login-input" placeholder="Enter your email">
+                    <span id="emailError" class="error-message"></span> 
+                    
+                    <label class="login-label">Password</label>
+                    <input type="password" id="inputPassword" class="login-input" placeholder="Enter your password">
+                    <span id="passwordError" class="error-message"></span> 
+                    
+                    <div class="remember-row">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Login</button>
+                    <p class="signup-text">Don’t have an account? <a href="#">Sign Up</a></p>
+                </form>
             </div>
         </div>
     </section>
-    
+
+
+<script src="login.js"></script>
+
 </body>
 </html>

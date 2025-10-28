@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #a855f7;
-    border-radius: 20px;
+    border-radius: 20px; 
     padding: 40px;
     width: 70%;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
@@ -90,4 +90,11 @@ body {
 .signup-text a {
     color: #fff;
     text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+    display: block;
 }
