@@ -39,14 +39,15 @@ function login() {
     let inputEmail = document.getElementById("inputEmail").value;
     let inputPassword = document.getElementById("inputPassword").value;
 
-    let savedEmail = localStorage.getItem("email");
-    let savedPassword = localStorage.getItem("password");
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let user = users.find(u => u.email === inputEmail && u.password === inputPassword);
 
-    if (inputEmail === savedEmail && inputPassword === savedPassword) {
+    if (user) {
         window.location.href = "Exam.html";
     } else {
         document.getElementById("passwordError").textContent = "Invalid email or password";
-    }
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -7,7 +7,7 @@ myForm.addEventListener('click', function(e){
     var email = document.getElementById('email')
     var password = document.getElementById('password')
     var confirmPassword = document.getElementById('confirmPassword')
-    
+  
       document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
 
     var nameRegex = /^[A-Za-z]{2,20}$/; // only letters, from 2–20
@@ -15,8 +15,8 @@ myForm.addEventListener('click', function(e){
     var passwordRegex = /^[A-Za-z0-9]{6,}$/; // at least 6 chars (letters or numbers)
 
     //array of registered users
-    var users=[]
-     users= JSON.parse(localStorage.getItem('users'))
+   
+     users= JSON.parse(localStorage.getItem('users')) || []; 
  
      if (!Array.isArray(users)) {
    users = [users];
@@ -67,14 +67,18 @@ myForm.addEventListener('click', function(e){
 if (hasError) {
     return;
   }
-  var rightCard= document.getElementById('rightCard')
-  var leftCard= document.getElementById('img')
-  
-  leftCard.style.height=rightCard.style.height;
+   
 
-  var newUser= {firstName,lastName,email,password}
+  var newUser = {
+        firstName: firstName.value.trim(),
+        lastName: lastName.value.trim(),
+        email: email.value.trim(),
+        password: password.value.trim()
+    };
   users.push(newUser)
 
   localStorage.setItem('users', JSON.stringify(users));
-  window.location.href ="signInTest.html"
+    console.log(users)
+  window.location.href ="../signIn.html"
 })
+
