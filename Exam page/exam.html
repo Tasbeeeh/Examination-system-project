@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Page</title>
+    <link rel="stylesheet" href="exam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="question-part">
+            <div class="question-header">
+                <h3 class="question">hi i am question</h3>
+                <button class="flag-btn">
+                    <i class="fa-regular fa-flag"></i>
+                </button>
+            </div>
+            
+            <div class="answers">
+                <ul>
+                    <li>answer 1</li>
+                    <li>answer 2</li>
+                    <li>answer 3</li>
+                </ul>
+            </div>
+            
+            <div class="navigation">
+                <button class="nav-btn prev">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
+                <button class="nav-btn next">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mark-part">
+            <div class="timer">
+                <h3>15:00</h3>
+            </div>
+
+        <div class="marked-question">
+            <h3 class="mark-title">marked question:</h3>
+            <ul>
+                <li>marked question 1</li>
+                <li>marked question 2</li>
+                <li>marked question 3</li>
+            </ul>
+        </div>
+
+        
+    </div>
+
+
+
+
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const flagBtn = document.querySelector('.flag-btn i');
+            flagBtn.addEventListener('click', () => {
+                // بدّل بين فلاج فاضي ومليان
+                flagBtn.classList.toggle('fa-regular');
+                flagBtn.classList.toggle('fa-solid');
+                // غير اللون
+                flagBtn.classList.toggle('flagged');
+            });
+        });
+    </script>
+
+
+</body>
+</html>
