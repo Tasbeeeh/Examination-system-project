@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 40px;
+    padding: 100px;
     height: 90vh;
     box-sizing: border-box;
 }
@@ -21,6 +21,13 @@ body {
     padding: 30px 40px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     margin-right: 20px;
+    /* width: 60%; */
+}
+.question-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .question {
@@ -48,40 +55,44 @@ body {
 .answers li:hover {
     background-color: #faf6ff;
 }
-
-.question-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
+.answers li.selected {
+  background-color: #e3d8ff;
+  border-color: #4a0dbf;
+  font-weight: bold;
 }
+
+
 
 .flag-btn {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.8rem;
-    color: #2a2146;
+    color: #4a0dbf;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.flag-btn i {
+    color: #4a0dbf; /* اللون الافتراضي */
+    cursor: pointer;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.flag-btn i {
-    color: #2a2146;
-    transition: color 0.2s ease, transform 0.2s ease;
+.flag-btn i.flagged {
+    color: #7b5edb; /* اللون لما يكون flagged */
 }
+
 
 .flag-btn i:hover {
     transform: scale(1.1);
 }
 
-.flagged {
-    color: #7b5edb !important;
-}
+
 .navigation {
     display: flex;
     justify-content: center;
     margin-top: 25px;
     gap: 20px;
+    position: relative;
 }
 
 .nav-btn {
@@ -102,8 +113,34 @@ body {
     transform: scale(1.1);
 }
 
+.submit-container {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+#submitBtn {
+    color: #fff;
+    background-color: #4a2db9;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+    position: absolute;
+    right: 1px;   
+}
+
+#submitBtn:hover {
+    background-color: #3b22a3;
+    transform: scale(1.05);
+}
+
+
 .mark-part {
-    width: 250px;
+    width: 300px;
     background-color: #fff;
     border-radius: 15px;
     padding: 20px;
@@ -121,17 +158,26 @@ body {
     padding: 0;
 }
 
+
 .marked-question li {
     background-color: #f4edff;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 10px;
+    padding: 10px 12px;
     margin-bottom: 8px;
-    border: 1px solid #c7b3f5;
+    border: 2px solid #c7b3f5;
+    cursor: pointer;
+    transition: 0.3s ease, box-shadow 0.3s ease;
     color: #2a2146;
-
 }
 
-.timer {
+.marked-question li:hover {
+    background-color: #e3d8ff;
+    border-color: #4a0dbf;
+    box-shadow: 0 0 15px rgba(123, 94, 219, 0.5);
+    transform: scale(1.03);
+}
+
+#timer {
     /* position: absolute; */
     top: 30px;
     right: 60px;
@@ -140,11 +186,7 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     padding: 15px 25px;
     text-align: center;
-    
-}
-
-.timer h3 {
-    margin: 0;
     color: #4a0dbf;
     font-size: 1.5rem;
+    font-weight: bold;
 }

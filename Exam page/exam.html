@@ -13,7 +13,7 @@
 
         <div class="question-part">
             <div class="question-header">
-                <h3 class="question">hi i am question</h3>
+                <h3 class="question"></h3>
                 <button class="flag-btn">
                     <i class="fa-regular fa-flag"></i>
                 </button>
@@ -21,55 +21,44 @@
             
             <div class="answers">
                 <ul>
-                    <li>answer 1</li>
+                    <!-- <li>answer 1</li>
                     <li>answer 2</li>
-                    <li>answer 3</li>
+                    <li>answer 3</li> -->
                 </ul>
             </div>
             
             <div class="navigation">
-                <button class="nav-btn prev">
+                <button id="prevBtn" class="nav-btn">
                     <i class="fa-solid fa-circle-arrow-left"></i>
                 </button>
-                <button class="nav-btn next">
+                <button id="nextBtn" class="nav-btn">
                     <i class="fa-solid fa-circle-arrow-right"></i>
                 </button>
+                     <div class="submit-container">
+                <button id="submitBtn" >Submit</button>
             </div>
-        </div>
+            </div>
 
+       
+        </div>
+        
         <div class="mark-part">
-            <div class="timer">
-                <h3>15:00</h3>
+            <div id="timer" >
+                <!-- <h3>15:00</h3> -->
             </div>
 
         <div class="marked-question">
-            <h3 class="mark-title">marked question:</h3>
+            <h3 class="mark-title">Marked question:</h3>
             <ul>
-                <li>marked question 1</li>
+                <!-- <li>marked question 1</li>
                 <li>marked question 2</li>
-                <li>marked question 3</li>
+                <li>marked question 3</li> -->
             </ul>
         </div>
 
         
     </div>
 
-
-
-
-     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const flagBtn = document.querySelector('.flag-btn i');
-            flagBtn.addEventListener('click', () => {
-                // بدّل بين فلاج فاضي ومليان
-                flagBtn.classList.toggle('fa-regular');
-                flagBtn.classList.toggle('fa-solid');
-                // غير اللون
-                flagBtn.classList.toggle('flagged');
-            });
-        });
-    </script>
-
-
+    <script src="exam.js"></script>
 </body>
 </html>
