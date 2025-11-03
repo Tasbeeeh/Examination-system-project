@@ -1,0 +1,150 @@
+body {
+  background: #fff;
+  /* background-image: url('1.avif'); */
+    /* background-size: cover;
+    background-position: center center; */
+  font-family: "Poppins", sans-serif;
+ 
+  height: 100vh;
+  margin: 0;
+}
+
+
+.header {
+background: linear-gradient(90deg, #A78BFA, #FDA4AF);
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.card {
+  background:white;
+  border-radius:12px;
+  padding:18px;
+  margin:18px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border:1px solid #eee;
+}
+.result-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.result-container-left, .card-result-right {
+  background: #fff;
+  margin: 5%;
+  padding: 40px;
+  border-radius: 18px;
+  width: 400px;
+  height: 40vh;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+ 
+}
+
+h1 {
+  font-size: 22px;
+  color: #4b0082;
+  margin-bottom: 15px;
+}
+
+#scoreText {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #4b0082;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #350063;
+}
+ 
+#percentCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 15px auto;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+
+   
+  background: conic-gradient(#4b0082 calc(var(--p) * 1%), #ddd 0);
+}
+
+ 
+#percentCircle::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+
+
+
+.correct, .incorrect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.correct {
+  background: #e8f9ee;
+  color: #0a8a44;
+  border-color: #8de4b3;
+}
+
+.incorrect {
+  background: #ffe8e8;
+  color: #c71f1f;
+  border-color: #f7b4b4;
+}
+
+
+
+  
+.status-box {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+/* .exam-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+} */
+
+/* #grade {
+   background: #A78BFA;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+} */

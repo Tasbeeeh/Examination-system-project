@@ -79,6 +79,6 @@ if (hasError) {
 
   localStorage.setItem('users', JSON.stringify(users));
     console.log(users)
-  window.location.href ="../signIn.html"
+  window.location.href ="../signIn.html";
 })
 

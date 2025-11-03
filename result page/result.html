@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Final Result</title>
+<link rel="stylesheet" href="result.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container-header">
+    <h1>Examination Results</h1>
+    <p>Academic Assessment</p>
+  </div>
+</header>
+
+<div class="result-card">
+
+  <!-- title -->
+  <div class="card">
+    <div class="exam-info">
+      <div>
+        <h2 id="examTitle">Final Exam</h2>
+      </div>
+   
+    </div>
+  </div>
+
+  <!-- main content -->
+  <div class="result-body">
+
+    <!-- LEFT CARD -->
+    <div class="result-container-left">
+      <h1>Quiz Result</h1>
+      <p id="scoreText"></p>
+
+      <div id="percentCircle"></div>
+
+      <button onclick="location.href='../quizz_App/index.html'" class="btn">
+        Try Again
+      </button>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <section class="card-result-right">
+      <h3>Performance Breakdown</h3>
+
+      <p class="row correct">Correct Answers <span id="correctVal">0</span></p>
+      <p class="row incorrect"> Incorrect Answers <span id="incorrectVal">0</span></p>
+
+      <div class="status-box">
+        <p>Performance Status</p>
+        <h4 id="statusText">—</h4>
+      </div>
+    </section>
+
+  </div> 
+
+</div>
+
+<script>
+/* ===== SCORE  ===== */
+var score = Number(localStorage.getItem("quizScore"));
+var total = Number(localStorage.getItem("totalQuestions"));
+var timeUp = localStorage.getItem("timeUp");
+
+var percent = Math.round((score / total) * 100); 
+
+/* =====  VALUES ===== */
+document.getElementById("correctVal").innerText = score;
+document.getElementById("incorrectVal").innerText = total - score;
+
+/* ===== SCORE TEXT ===== */
+var scoreText = document.getElementById("scoreText");
+var statusText = document.getElementById("statusText");
+
+// If time finished
+if(timeUp === "yes"){
+  scoreText.innerHTML = ` Time's up! You scored ${score}/${total}`;
+  statusText.innerHTML = "Time Over";
+} else {
+  // Normal result text
+  if(score === total){
+    scoreText.innerHTML = ` Perfect! You scored ${score}/${total}`;
+  } else if(score >= total/2){
+    scoreText.innerHTML = ` Good! You scored ${score}/${total}`;
+  } else {
+    scoreText.innerHTML = `❌ Keep trying! You scored ${score}/${total}`;
+  }
+
+  // Performance Status
+  var status = percent >= 90 ? "Excellent" :
+               percent >= 70 ? "Good" :
+               percent >= 50 ? "Average" : "Needs Improvement";
+
+  statusText.innerHTML = status;
+}
+
+
+/* ===== PERCENT CIRCLE ===== */
+var circle = document.getElementById("percentCircle");
+circle.style.setProperty('--p', percent);
+circle.innerHTML = `<span style="position:relative; z-index:2;">${percent}%</span>`;
+</script>
+
+</body>
+</html>
