@@ -43,7 +43,7 @@ function login() {
     let user = users.find(u => u.email === inputEmail && u.password === inputPassword);
 
     if (user) {
-        window.location.href = "Exam.html";
+        window.location.href = "../Exam page/exam.html";
     } else {
         document.getElementById("passwordError").textContent = "Invalid email or password";
     }
