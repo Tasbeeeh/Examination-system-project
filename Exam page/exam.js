@@ -48,7 +48,7 @@ flagButton.addEventListener("click", function () {
 //Timer section
 
 var totalTime = 15 * 60;
-
+var countdown;
 function setTimer() {
     var timerDisplay = document.getElementById("timer");
 
@@ -57,7 +57,7 @@ function setTimer() {
         totalTime = parseInt(savedTime);
     }
 
-    var countdown = setInterval(function () {
+     countdown = setInterval(function () {
         var minutes = Math.floor(totalTime / 60);
         var seconds = totalTime % 60;
         timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
@@ -260,6 +260,8 @@ document.getElementById("prevBtn").addEventListener("click", function () {
 });
 
 document.getElementById("submitBtn").addEventListener("click", function () {
+      clearInterval(countdown);
+      // localStorage.removeItem("remainingTime");
     var theRightAnswer = userAnswers.filter(a => a.correct).length;
 
     localStorage.setItem("quizScore", theRightAnswer);
