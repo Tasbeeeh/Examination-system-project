@@ -20,7 +20,7 @@
   <div class="card">
     <div class="exam-info">
       <div>
-        <h2 id="examTitle">Final Exam</h2>
+        <h2 id="examTitle"> </h2>
       </div>
    
     </div>
@@ -36,9 +36,9 @@
 
       <div id="percentCircle"></div>
 
-      <button onclick="location.href='../quizz_App/index.html'" class="btn">
+      <!-- <button onclick="location.href='../quizz_App/index.html'" class="btn">
         Try Again
-      </button>
+      </button> -->
     </div>
 
     <!-- RIGHT CARD -->
@@ -63,7 +63,12 @@
 var score = Number(localStorage.getItem("quizScore"));
 var total = Number(localStorage.getItem("totalQuestions"));
 var timeUp = localStorage.getItem("timeUp");
-
+var users = JSON.parse(localStorage.getItem("users")); // get the array
+// var myName = users && users.length > 0 ? users[0].firstName : "User";
+var myName;
+if (users.length > 0){
+   myName= users[0].firstName 
+}
 var percent = Math.round((score / total) * 100); 
 
 /* =====  VALUES ===== */
@@ -73,6 +78,9 @@ document.getElementById("incorrectVal").innerText = total - score;
 /* ===== SCORE TEXT ===== */
 var scoreText = document.getElementById("scoreText");
 var statusText = document.getElementById("statusText");
+
+var myNameElement= document.getElementById("examTitle")
+myNameElement.textContent=`welcome, ${myName}`;
 
 // If time finished
 if(timeUp === "yes"){
